@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <span class="h">
+    <div class="h">
       <div class="reviewBody">
         <div class="reviewCard">
           <h5>Top Review</h5>
@@ -16,7 +16,7 @@ const Home = () => {
         </div>
       </div>
       <button class="randomReview">Random Review</button>
-    </span>
+    </div>
   );
 };
 
