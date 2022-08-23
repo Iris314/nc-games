@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { fetchReviews, fetchCategories } from "../api";
 import ReviewCard from "./ReviewCard";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Reviews = () => {
   const { category } = useParams();
   const [reviews, setReviews] = useState([]);
   const [categories, setCategories] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCategories().then(({ categories }) => {
@@ -20,8 +21,8 @@ const Reviews = () => {
 
   const selectCategory = (event) => {
     event.target.value === "select"
-      ? window.location.replace(`/reviews`)
-      : window.location.replace(`/reviews/${event.target.value}`);
+      ? navigate(`/reviews`)
+      : navigate(`/reviews/${event.target.value}`);
   };
 
   const [isLoading, setIsLoading] = useState(true);
