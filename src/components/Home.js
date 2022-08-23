@@ -15,7 +15,7 @@ const Home = () => {
           <h5>Most Recent Comment</h5>
         </div>
       </div>
-      <button class="randomReview">Random Review</button>
+      <button className="randomReview">Random Review</button>
     </div>
   );
 };

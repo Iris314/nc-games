@@ -25,3 +25,11 @@ export const fetchReview = (review_id) => {
     return res.json();
   });
 };
+
+export const fetchComments = (review_id) => {
+  return fetch(
+    `https://boardgames-nc.herokuapp.com/api/reviews/${review_id}/comments`
+  ).then((res) => {
+    return res.json();
+  });
+};

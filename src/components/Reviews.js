@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { fetchReviews, fetchCategories } from "../api";
 import ReviewCard from "./ReviewCard";
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const Reviews = () => {
-  const { category } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const category = searchParams.get("category");
   const [reviews, setReviews] = useState([]);
   const [categories, setCategories] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchCategories().then(({ categories }) => {
@@ -20,11 +22,10 @@ const Reviews = () => {
 
   const selectCategory = (event) => {
     event.target.value === "select"
-      ? window.location.replace(`/reviews`)
-      : window.location.replace(`/reviews/${event.target.value}`);
+      ? setSearchParams()
+      : setSearchParams({ category: event.target.value });
   };
 
-  const [isLoading, setIsLoading] = useState(true);
   if (isLoading) return <p>Loading...</p>;
   return (
     <>
