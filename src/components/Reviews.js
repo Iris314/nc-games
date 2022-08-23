@@ -8,6 +8,7 @@ const Reviews = () => {
   const category = searchParams.get("category");
   const [reviews, setReviews] = useState([]);
   const [categories, setCategories] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchCategories().then(({ categories }) => {
@@ -25,7 +26,6 @@ const Reviews = () => {
       : setSearchParams({ category: event.target.value });
   };
 
-  const [isLoading, setIsLoading] = useState(true);
   if (isLoading) return <p>Loading...</p>;
   return (
     <>

@@ -34,10 +34,62 @@ a {
     width: 50%;
   }
 }
-.container {
-  padding: 2px 16px;
+
+.singleReviewCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 2%;
 }
 
+.commentArea {
+  margin-top: 2%;
+}
+
+.commentCard {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 1%;
+}
+
+.container {
+  padding: 2px 16px;
+  margin: 2%;
+}
+
+.commentCard .container {
+  width: 100%;
+}
+@media only screen and (min-width: 600px) {
+  .commentCard {
+    width: 90%;
+  }
+}
+
+.reviewBody {
+  text-align: left;
+}
+
+@media only screen and (min-width: 600px) {
+  .singleReviewCard {
+    width: 90%;
+  }
+
+  .singleReviewCard img {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .headerLinks {
   display: flex;
   align-items: center;
@@ -60,6 +112,26 @@ a {
   color: gray;
 }
 
+.singleReviewTitle {
+  text-align: center;
+}
+
+.reviewDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  color: gray;
+}
+
+.reviewData {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  color: gray;
+}
+
 .randomReview {
   background-color: brown;
   border: none;
@@ -70,13 +142,3 @@ a {
   display: inline-block;
   margin-top: 10%;
 }
-
-/* .categoryLinks {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.category {
-  flex: 3;
-} */
