@@ -16,9 +16,7 @@ const Review = () => {
 
   return (
     <div className="reviewBody">
-      <div class="reviewCard">
-        <ReviewCard review={review} />
-      </div>
+      <div class="reviewCard"></div>
     </div>
   );
 };
