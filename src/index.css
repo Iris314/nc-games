@@ -43,6 +43,7 @@ a {
   align-items: center;
   justify-content: center;
   height: 10px;
+  margin-bottom: 5%;
 }
 
 .reviewImage {
@@ -69,3 +70,13 @@ a {
   display: inline-block;
   margin-top: 10%;
 }
+
+/* .categoryLinks {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category {
+  flex: 3;
+} */

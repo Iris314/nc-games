@@ -1,22 +1,22 @@
 const Home = () => {
   return (
-    <span class="h">
-      <div class="reviewBody">
-        <div class="reviewCard">
+    <div className="h">
+      <div className="reviewBody">
+        <div className="reviewCard">
           <h5>Top Review</h5>
         </div>
-        <div class="reviewCard">
+        <div className="reviewCard">
           <h5>Most recent Review</h5>
         </div>
-        <div class="reviewCard">
+        <div className="reviewCard">
           <h5>Top Comment</h5>
         </div>
-        <div class="reviewCard">
+        <div className="reviewCard">
           <h5>Most Recent Comment</h5>
         </div>
       </div>
       <button class="randomReview">Random Review</button>
-    </span>
+    </div>
   );
 };
 
