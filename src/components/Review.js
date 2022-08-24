@@ -14,10 +14,12 @@ const Review = () => {
   useEffect(() => {
     fetchReview(review_id).then(({ review }) => {
       setReview(review);
+      if (review.comment_count > 0) {
+        fetchComments(review_id).then(({ comments }) => {
+          setComments(comments);
+        });
+      }
       setIsLoading(false);
-    });
-    fetchComments(review_id).then(({ comments }) => {
-      setComments(comments);
     });
   }, [review_id]);
 

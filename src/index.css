@@ -136,7 +136,7 @@ a {
 /* contains comments and feedback */
 .reviewBody .ratings {
   display: flex;
-  color: gray;
+
   justify-content: space-between;
 }
 
@@ -161,4 +161,12 @@ a {
 
 .voting .voted {
   opacity: 1;
+}
+
+.none {
+  display: none;
+}
+
+.error {
+  color: red;
 }

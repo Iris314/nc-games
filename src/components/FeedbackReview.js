@@ -5,6 +5,7 @@ const FeedbackReview = ({ review }) => {
   const [changedVotes, setChangedVotes] = useState(0);
   const [votedPos, setVotedPos] = useState(false);
   const [votedNeg, setVotedNeg] = useState(false);
+  const [error, setError] = useState(null);
 
   const changeVote = (votes) => {
     setChangedVotes(
@@ -16,7 +17,9 @@ const FeedbackReview = ({ review }) => {
   };
 
   useEffect(() => {
-    patchReviewVotes(review.review_id, changedVotes).then();
+    patchReviewVotes(review.review_id, changedVotes).catch((err) => {
+      setError({ err });
+    });
   }, [changedVotes, review.review_id]);
 
   return (
@@ -36,6 +39,7 @@ const FeedbackReview = ({ review }) => {
       <p className="voteRevCounter">
         votes: {review.votes + (votedPos ? 1 : votedNeg ? -1 : 0)}
       </p>
+      <p className={error === null ? "none" : "error"}>Error: try again</p>
     </span>
   );
 };

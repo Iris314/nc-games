@@ -5,6 +5,7 @@ const FeedbackComment = ({ comment }) => {
   const [changedVotes, setChangedVotes] = useState(0);
   const [votedPos, setVotedPos] = useState(false);
   const [votedNeg, setVotedNeg] = useState(false);
+  const [error, setError] = useState(null);
 
   const changeVote = (votes) => {
     setChangedVotes(
@@ -16,7 +17,9 @@ const FeedbackComment = ({ comment }) => {
   };
 
   useEffect(() => {
-    patchCommentVotes(comment.comment_id, changedVotes).then();
+    patchCommentVotes(comment.comment_id, changedVotes).catch((err) =>
+      setError({ err })
+    );
   }, [changedVotes, comment.comment_id]);
 
   return (
@@ -34,6 +37,7 @@ const FeedbackComment = ({ comment }) => {
         </button>
       </span>
       <p>votes: {comment.votes + (votedPos ? 1 : votedNeg ? -1 : 0)}</p>
+      <p className={error === null ? "none" : "error"}>Error: try again</p>
     </span>
   );
 };
