@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import FeedbackReview from "./FeedbackReview";
 
 const ReviewCard = ({ review }) => {
   return (
@@ -16,7 +15,7 @@ const ReviewCard = ({ review }) => {
       </Link>
       <span className="ratings">
         <p>comments: {review.comment_count}</p>
-        <FeedbackReview review={review} />
+        <p>votes: {review.votes} </p>
       </span>
     </div>
   );
