@@ -33,3 +33,30 @@ export const fetchComments = (review_id) => {
     return res.json();
   });
 };
+
+export const patchCommentVotes = (comment_id, votes) => {
+  return fetch(
+    `https://boardgames-nc.herokuapp.com/api/comments/${comment_id}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ inc_votes: votes }),
+    }
+  ).then((res) => {
+    return res.json();
+  });
+};
+
+export const patchReviewVotes = (review_id, votes) => {
+  return fetch(`https://boardgames-nc.herokuapp.com/api/reviews/${review_id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ inc_votes: votes }),
+  }).then((res) => {
+    return res.json();
+  });
+};
