@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchReview, fetchComments } from "../api";
 import SingleReviewCard from "./SingleReviewCard";
 import CommentCard from "./CommentCard";
+import NewComment from "./NewComment";
 
 const Review = () => {
   const { review_id } = useParams();
@@ -41,6 +42,7 @@ const Review = () => {
         ) : (
           <p>This review does not have any comments!</p>
         )}
+        <NewComment />
       </div>
     </>
   );
