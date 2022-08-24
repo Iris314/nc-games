@@ -1,4 +1,4 @@
-import FeedbackReview from "./FeedbackReview";
+import FeedbackReview from "../userInteraction/FeedbackReview";
 
 const SingleReviewCard = ({ review }) => {
   const date = new Date(review.created_at);

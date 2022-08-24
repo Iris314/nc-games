@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchReviews, fetchCategories } from "../api";
+import { fetchReviews, fetchCategories } from "../../api";
 import ReviewCard from "./ReviewCard";
 import { useSearchParams } from "react-router-dom";
 

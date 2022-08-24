@@ -11,6 +11,53 @@ a {
   text-decoration: none;
   color: black;
   margin: 5%;
+  display: inline-block;
+}
+
+.userBanner {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2%;
+  margin-right: 3%;
+}
+
+.userBanner img {
+  width: 4%;
+  height: 4%;
+}
+
+.userBanner p {
+  text-align: center;
+}
+
+.header h1 {
+  margin-top: 0em;
+  padding: none;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(134, 134, 134);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.userBanner img {
+  padding: 3%;
+}
+
+.userBanner img:hover + .tooltiptext {
+  visibility: visible;
+}
+
+.header a {
+  margin-top: 0em;
 }
 
 .randomReview {
@@ -133,14 +180,11 @@ a {
   color: gray;
 }
 
-/* contains comments and feedback */
 .reviewBody .ratings {
   display: flex;
-
   justify-content: space-between;
 }
 
-/* contains buttons and counter */
 .reviewBody .feedback {
   display: flex;
   align-items: center;
@@ -169,4 +213,36 @@ a {
 
 .error {
   color: red;
+}
+
+.delete {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.deleteButton {
+  text-decoration: underline;
+  background: none;
+  border: transparent;
+  cursor: pointer;
+  color: red;
+}
+
+.commentForm {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  margin-right: 10%;
+}
+.commentField {
+  width: 90%;
+  height: 10em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  text-align: left;
+}
+.commentForm .submit {
+  background: none;
+  cursor: pointer;
 }
