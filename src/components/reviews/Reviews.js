@@ -9,11 +9,16 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [categories, setCategories] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [isCategoryLoading, setisCategoryLoading] = useState(true);
 
   useEffect(() => {
     fetchCategories().then(({ categories }) => {
       setCategories(categories);
+      setisCategoryLoading(false);
     });
+  }, []);
+
+  useEffect(() => {
     fetchReviews(category).then(({ reviews }) => {
       setReviews(reviews);
       setIsLoading(false);
@@ -26,7 +31,7 @@ const Reviews = () => {
       : setSearchParams({ category: event.target.value });
   };
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading || isCategoryLoading) return <p>Loading...</p>;
   return (
     <>
       <select
