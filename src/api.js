@@ -6,6 +6,12 @@ export const fetchReviews = (params) => {
   });
 };
 
+export const fetchUsers = () => {
+  return fetch(`https://boardgames-nc.herokuapp.com/api/users`).then((res) => {
+    return res.json();
+  });
+};
+
 export const fetchCategories = () => {
   return fetch("https://boardgames-nc.herokuapp.com/api/categories").then(
     (res) => {

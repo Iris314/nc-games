@@ -7,11 +7,10 @@ const Header = () => {
   return (
     <>
       <span className="header">
-        <div className="userBanner">
+        <Link className="userBanner" to="./users">
           <img src={CurrentUser.avatar_url} alt="avatar"></img>
           <span className="tooltiptext">{CurrentUser.username}</span>
-        </div>
-
+        </Link>
         <Link to="./">
           <h1>NC - Games</h1>
         </Link>

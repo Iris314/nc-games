@@ -9,9 +9,7 @@ const CommentCard = ({ comment }) => {
   const { CurrentUser } = useContext(UserContext);
 
   const removeComment = () => {
-    deleteComment(comment.comment_id).then((res) =>
-      window.location.reload(false)
-    );
+    deleteComment(comment.comment_id).then(() => window.location.reload(false));
   };
 
   return (

@@ -17,13 +17,29 @@ a {
 .userBanner {
   display: flex;
   justify-content: flex-end;
+  height: 8vh;
+  width: auto;
   margin-top: 2%;
   margin-right: 3%;
+  margin-bottom: 0%;
 }
 
-.userBanner img {
-  width: 4%;
-  height: 4%;
+@media only screen and (min-width: 600px) {
+  .userBanner {
+    height: 10vh;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .userBanner {
+    height: 15vh;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .userBanner {
+    height: 20vh;
+  }
 }
 
 .userBanner p {
@@ -108,6 +124,41 @@ a {
   margin: 2%;
 }
 
+.userBody {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.userContainer {
+  padding: 2px 16px;
+  margin: 2%;
+}
+
+.userCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 2%;
+}
+
+@media only screen and (min-width: 600px) {
+  .userCard {
+    width: 30%;
+  }
+}
+
+.userImageContainer {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+
 @media only screen and (min-width: 600px) {
   .reviewCard {
     width: 50%;
@@ -122,6 +173,7 @@ a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 2%;
 }
+
 .singleReviewTitle {
   text-align: center;
 }
@@ -149,6 +201,10 @@ a {
 .container {
   padding: 2px 16px;
   margin: 2%;
+}
+
+.userContainer {
+  cursor: pointer;
 }
 
 .commentCard .container {

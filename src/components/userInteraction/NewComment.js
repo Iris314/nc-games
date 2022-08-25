@@ -49,7 +49,7 @@ const NewComment = ({ review_id }) => {
         <p className={error === null ? "none" : "error"}>
           Field can not be empty
         </p>
-        <p className={postStatus === 2 ? "succes" : "none"}>Succes!</p>
+        <p className={postStatus === 2 ? "succes" : "none"}>Success!</p>
         <p className={postStatus === 1 ? "error" : "none"}>Error, try again</p>
       </form>
     </div>
