@@ -29,7 +29,7 @@ const NewComment = ({ review_id }) => {
         .then((res) => {
           if (res.msg) {
             setPostStatus(1);
-            setError(null);
+            setError(res.msg);
           } else {
             window.location.reload(false);
           }

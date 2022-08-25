@@ -279,6 +279,23 @@ a {
   width: 100%;
 }
 
+.designerField {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.designerField input {
+  width: 100%;
+}
+
+.commentField {
+  font-family: inherit;
+  padding: 1%;
+}
+
 .urlField {
   width: 90%;
   display: flex;
@@ -288,5 +305,5 @@ a {
 }
 
 .urlField input {
-  width: 98.9%;
+  width: 98%;
 }
