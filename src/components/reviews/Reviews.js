@@ -52,7 +52,7 @@ const Reviews = () => {
   const switchSort = () => {
     setSortToggle(!sortToggle);
     const params = Object.fromEntries([...searchParams.entries()]);
-    params.order = sortToggle ? "asc" : "desc";
+    params.order = sortToggle ? "desc" : "asc";
     setSearchParams(params);
   };
 
@@ -94,10 +94,10 @@ const Reviews = () => {
             <option value="comments">comments</option>
           </select>
           <button className={sortToggle ? "none" : ""} onClick={switchSort}>
-            <b>&#x21e7;</b>
+            <b>&#x21e9;</b>
           </button>
           <button className={sortToggle ? "" : "none"} onClick={switchSort}>
-            <b>&#x21e9;</b>
+            <b>&#x21e7;</b>
           </button>
         </span>
       </span>
