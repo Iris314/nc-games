@@ -252,3 +252,26 @@ a {
   background: none;
   cursor: pointer;
 }
+
+.titleField {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.titleField input {
+  width: 100%;
+}
+
+.urlField {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.urlField input {
+  width: 97%;
+}

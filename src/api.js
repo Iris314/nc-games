@@ -74,6 +74,26 @@ export const postComment = ({ comment }, review_id) => {
     .catch((err) => console.log(err));
 };
 
+export const postReview = ({ review }) => {
+  return fetch(`https://boardgames-nc.herokuapp.com/api/reviews`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      owner: review.owner,
+      title: review.title,
+      review_body: review.body,
+      designer: review.designer,
+      category: review.category,
+    }),
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => console.log(err));
+};
+
 export const deleteComment = (comment_id) => {
   return fetch(
     `https://boardgames-nc.herokuapp.com/api/comments/${comment_id}`,
