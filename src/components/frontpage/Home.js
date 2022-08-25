@@ -25,10 +25,6 @@ const Home = () => {
     setIsLoading(false);
   }, []);
 
-  // const randomReview = () => {
-  //   return reviewNo[Math.floor(Math.random() * reviewNo.length)];
-  // };
-
   if (isLoading) return <p>Loading...</p>;
   return (
     <div className="h">

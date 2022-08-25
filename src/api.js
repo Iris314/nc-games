@@ -89,15 +89,13 @@ export const postReview = ({ review }) => {
     body: JSON.stringify({
       owner: review.owner,
       title: review.title,
-      review_body: review.body,
+      review_body: review.review_body,
       designer: review.designer,
       category: review.category,
     }),
-  })
-    .then((res) => {
-      return res.json();
-    })
-    .catch((err) => console.log(err));
+  }).then((res) => {
+    return res.json();
+  });
 };
 
 export const deleteComment = (comment_id) => {
