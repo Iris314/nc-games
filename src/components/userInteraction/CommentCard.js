@@ -5,11 +5,21 @@ import { deleteComment } from "../../api";
 
 const CommentCard = ({ comment }) => {
   const date = new Date(comment.created_at);
+  const dateNow = new Date(Date.now());
   const newDate = date.toDateString();
   const { CurrentUser } = useContext(UserContext);
 
   const removeComment = () => {
     deleteComment(comment.comment_id).then(() => window.location.reload(false));
+  };
+
+  const currentDay = () => {
+    return comment.author === CurrentUser.username &&
+      date.getFullYear() === dateNow.getFullYear() &&
+      date.getMonth() === dateNow.getMonth() &&
+      date.getDate() === dateNow.getDate()
+      ? true
+      : false;
   };
 
   return (
@@ -22,11 +32,15 @@ const CommentCard = ({ comment }) => {
       <div className={comment.author === CurrentUser.username ? "none" : ""}>
         <FeedbackComment comment={comment} />
       </div>
+      <div
+        className={
+          comment.author === CurrentUser.username ? "feedback" : "none"
+        }>
+        <p>votes: {comment.votes}</p>
+      </div>
       <div className="delete">
         <button
-          className={
-            comment.author === CurrentUser.username ? "deleteButton" : "none"
-          }
+          className={currentDay() ? "deleteButton" : "none"}
           onClick={removeComment}>
           Delete
         </button>
