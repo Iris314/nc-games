@@ -7,6 +7,7 @@ import NewReview from "./components/reviews/NewReview";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { UserContext } from "./contexts/UserContext";
+import Page404 from "./components/Page404";
 
 function App() {
   const [CurrentUser, SetCurrentUser] = useState({
@@ -25,6 +26,7 @@ function App() {
             <Route path="/reviews" element={<Reviews />}></Route>
             <Route path="/reviews/:review_id" element={<Review />}></Route>
             <Route path="/reviews/new" element={<NewReview />}></Route>
+            <Route path="*" element={<Page404 />}></Route>
           </Routes>
         </UserContext.Provider>
       </BrowserRouter>
