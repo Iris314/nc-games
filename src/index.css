@@ -60,6 +60,12 @@ a {
   margin-top: 0em;
 }
 
+.filtering {
+  display: flex;
+  gap: 17%;
+  justify-content: center;
+}
+
 .randomReview {
   background-color: brown;
   border: none;

@@ -1,13 +1,9 @@
-export const fetchReviews = (category) => {
-  return category
-    ? fetch(
-        `https://boardgames-nc.herokuapp.com/api/reviews?category=${category}`
-      ).then((res) => {
-        return res.json();
-      })
-    : fetch("https://boardgames-nc.herokuapp.com/api/reviews").then((res) => {
-        return res.json();
-      });
+export const fetchReviews = (params) => {
+  return fetch(
+    `https://boardgames-nc.herokuapp.com/api/reviews?${params}`
+  ).then((res) => {
+    return res.json();
+  });
 };
 
 export const fetchCategories = () => {
