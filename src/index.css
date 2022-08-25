@@ -43,7 +43,6 @@ a {
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
-
   position: absolute;
   z-index: 1;
 }
@@ -62,8 +61,24 @@ a {
 
 .filtering {
   display: flex;
-  gap: 17%;
+  gap: 13%;
   justify-content: center;
+  align-items: center;
+}
+.sortingField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sortingField button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: x-large;
+}
+.sortingField select {
+  height: 100%;
 }
 
 .randomReview {
@@ -251,4 +266,27 @@ a {
 .commentForm .submit {
   background: none;
   cursor: pointer;
+}
+
+.titleField {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.titleField input {
+  width: 100%;
+}
+
+.urlField {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.urlField input {
+  width: 98.9%;
 }
