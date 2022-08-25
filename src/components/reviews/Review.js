@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchReview, fetchComments } from "../api";
+import { fetchReview, fetchComments } from "../../api";
 import SingleReviewCard from "./SingleReviewCard";
-import CommentCard from "./CommentCard";
-import NewComment from "./NewComment";
+import CommentCard from "../userInteraction/CommentCard";
+import NewComment from "../userInteraction/NewComment";
 
 const Review = () => {
   const { review_id } = useParams();
@@ -37,14 +37,14 @@ const Review = () => {
           comments.map((comment) => {
             return (
               <div className="commentCard" key={comment.comment_id}>
-                <CommentCard comment={comment} />
+                <CommentCard comment={comment} review_id={review_id} />
               </div>
             );
           })
         ) : (
           <p>This review does not have any comments!</p>
         )}
-        <NewComment />
+        <NewComment review_id={review.review_id} />
       </div>
     </>
   );

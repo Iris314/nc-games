@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { patchCommentVotes } from "../api";
+import { patchReviewVotes } from "../../api";
 
-const FeedbackComment = ({ comment }) => {
+const FeedbackReview = ({ review }) => {
   const [changedVotes, setChangedVotes] = useState(0);
   const [votedPos, setVotedPos] = useState(false);
   const [votedNeg, setVotedNeg] = useState(false);
@@ -17,10 +17,10 @@ const FeedbackComment = ({ comment }) => {
   };
 
   useEffect(() => {
-    patchCommentVotes(comment.comment_id, changedVotes).catch((err) =>
-      setError({ err })
-    );
-  }, [changedVotes, comment.comment_id]);
+    patchReviewVotes(review.review_id, changedVotes).catch((err) => {
+      setError({ err });
+    });
+  }, [changedVotes, review.review_id]);
 
   return (
     <span className="feedback">
@@ -36,10 +36,12 @@ const FeedbackComment = ({ comment }) => {
           &#x2705;
         </button>
       </span>
-      <p>votes: {comment.votes + (votedPos ? 1 : votedNeg ? -1 : 0)}</p>
+      <p className="voteRevCounter">
+        votes: {review.votes + (votedPos ? 1 : votedNeg ? -1 : 0)}
+      </p>
       <p className={error === null ? "none" : "error"}>Error: try again</p>
     </span>
   );
 };
 
-export default FeedbackComment;
+export default FeedbackReview;
