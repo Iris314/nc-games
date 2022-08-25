@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Reviews from "./components/reviews/Reviews";
 import Review from "./components/reviews/Review";
-import Home from "./components/Home";
+import Home from "./components/frontpage/Home";
 import NewReview from "./components/reviews/NewReview";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";

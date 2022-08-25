@@ -249,6 +249,11 @@ a {
   color: gray;
 }
 
+.topDetails {
+  font-size: small;
+  color: gray;
+}
+
 .reviewData {
   display: flex;
   align-items: center;
