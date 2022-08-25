@@ -6,15 +6,13 @@ import { useSearchParams } from "react-router-dom";
 const Reviews = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const category = searchParams.get("category");
-  const sort_by = searchParams.get("sort_by");
-  const order = searchParams.get("order");
   const [reviews, setReviews] = useState([]);
   const [categories, setCategories] = useState();
-  const [sorting, setSorting] = useState();
-  const [currentSort, setCurrentsort] = useState();
+  const [currentSort] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [isCategoryLoading, setisCategoryLoading] = useState(true);
   const [sortToggle, setSortToggle] = useState(false);
+  const [empty, setEmpty] = useState(false);
 
   useEffect(() => {
     fetchCategories().then(({ categories }) => {
@@ -24,11 +22,14 @@ const Reviews = () => {
   }, []);
 
   useEffect(() => {
-    fetchReviews(searchParams.toString()).then(({ reviews }) => {
-      setReviews(reviews);
-      setIsLoading(false);
-    });
-  }, [category, sort_by, order]);
+    fetchReviews(searchParams.toString())
+      .then(({ reviews }) => {
+        setReviews(reviews);
+        setIsLoading(false);
+        setEmpty(false);
+      })
+      .catch(() => setEmpty(true));
+  }, [searchParams]);
 
   const selectCategory = (event) => {
     const params = Object.fromEntries([...searchParams.entries()]);
@@ -40,7 +41,9 @@ const Reviews = () => {
 
   const sortCards = (event) => {
     const params = Object.fromEntries([...searchParams.entries()]);
-    event.target.value === "select"
+    event.target.value === "comments"
+      ? (params.sort_by = "comment_count")
+      : event.target.value === "select"
       ? delete params.sort_by
       : (params.sort_by = event.target.value);
     setSearchParams(params);
@@ -53,7 +56,15 @@ const Reviews = () => {
     setSearchParams(params);
   };
 
-  if (isLoading || isCategoryLoading) return <p>Loading...</p>;
+  if ((isLoading && !empty) || (isCategoryLoading && !empty))
+    return <p>Loading...</p>;
+  if (empty)
+    return (
+      <div>
+        <h2>404</h2>
+        <h4>No reviews found </h4>
+      </div>
+    );
   return (
     <>
       <span className="filtering">
@@ -74,19 +85,18 @@ const Reviews = () => {
           <select
             className="sorting"
             onChange={sortCards}
-            defaultValue={currentSort ? currentSort : "Sort by"}>
-            <option value="select">Sort by</option>
+            defaultValue={currentSort ? currentSort : "select"}>
+            <option value="select">date</option>
             <option value="category">category</option>
             <option value="title">title</option>
-            <option value="date">date</option>
             <option value="owner">owner</option>
             <option value="votes">votes</option>
             <option value="comments">comments</option>
           </select>
-          <button className={sortToggle ? "" : "none"} onClick={switchSort}>
+          <button className={sortToggle ? "none" : ""} onClick={switchSort}>
             <b>&#x21e7;</b>
           </button>
-          <button className={sortToggle ? "none" : ""} onClick={switchSort}>
+          <button className={sortToggle ? "" : "none"} onClick={switchSort}>
             <b>&#x21e9;</b>
           </button>
         </span>

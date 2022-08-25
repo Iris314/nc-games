@@ -10,20 +10,31 @@ const Review = () => {
   const [review, setReview] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [comments, setComments] = useState();
+  const [empty, setEmpty] = useState(false);
 
   useEffect(() => {
-    fetchReview(review_id).then(({ review }) => {
-      setReview(review);
-      if (review.comment_count > 0) {
-        fetchComments(review_id).then(({ comments }) => {
-          setComments(comments);
-        });
-      }
-      setIsLoading(false);
-    });
+    fetchReview(review_id)
+      .then(({ review }) => {
+        setReview(review);
+        if (review.comment_count > 0) {
+          fetchComments(review_id).then(({ comments }) => {
+            setComments(comments);
+          });
+        }
+        setIsLoading(false);
+        setEmpty(false);
+      })
+      .catch(() => setEmpty(true));
   }, [review_id]);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading && !empty) return <p>Loading...</p>;
+  if (empty)
+    return (
+      <div>
+        <h2>404</h2>
+        <h4>Review not found</h4>
+      </div>
+    );
   return (
     <>
       <div className="reviewBody">

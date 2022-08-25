@@ -2,7 +2,7 @@ export const fetchReviews = (params) => {
   return fetch(
     `https://boardgames-nc.herokuapp.com/api/reviews?${params}`
   ).then((res) => {
-    return res.json();
+    return res.status !== 200 ? Promise.reject(res) : res.json();
   });
 };
 
@@ -18,7 +18,7 @@ export const fetchReview = (review_id) => {
   return fetch(
     `https://boardgames-nc.herokuapp.com/api/reviews/${review_id}`
   ).then((res) => {
-    return res.json();
+    return res.status === 404 ? Promise.reject(res) : res.json();
   });
 };
 
