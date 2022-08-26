@@ -27,7 +27,12 @@ const Review = () => {
       .catch(() => setEmpty(true));
   }, [review_id]);
 
-  if (isLoading && !empty) return <p>Loading...</p>;
+  if (isLoading && !empty)
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
   if (empty)
     return (
       <div>

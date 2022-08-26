@@ -34,6 +34,10 @@ a {
   color: #e6e6e6;
 }
 
+.loading {
+  height: 80vh;
+}
+
 .topHeader {
   padding-top: 6px;
   display: flex;

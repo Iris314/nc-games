@@ -57,7 +57,11 @@ const Reviews = () => {
   };
 
   if ((isLoading && !empty) || (isCategoryLoading && !empty))
-    return <p>Loading...</p>;
+    return (
+      <div className="loading">
+        <p>Loading...</p>
+      </div>
+    );
   if (empty)
     return (
       <div>
