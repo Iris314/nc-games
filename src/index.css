@@ -1,3 +1,7 @@
+:root {
+  background-color: #1f1f1f;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -14,7 +18,24 @@ a {
   display: inline-block;
 }
 
+.App .dark {
+  background-color: #1f1f1f;
+  color: #ccc;
+}
+
+.dark a,
+.dark h4,
+.dark h5,
+.dark h3 {
+  color: #e6e6e6;
+}
+
+.dark p {
+  color: #e6e6e6;
+}
+
 .topHeader {
+  padding-top: 6px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -51,7 +72,7 @@ a {
   width: 13px;
   left: 2px;
   bottom: 2px;
-  background-color: black;
+  background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -60,7 +81,7 @@ input:checked + .slider:before {
   -webkit-transform: translateX(13px);
   -ms-transform: translateX(13px);
   transform: translateX(13px);
-  background-color: white;
+  background-color: black;
 }
 
 .userBanner {
@@ -73,12 +94,30 @@ input:checked + .slider:before {
   margin-bottom: 0%;
 }
 
+.userBannerContainer {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 25px;
+  width: 60px;
+  height: 46px;
+}
+
 .userBanner p {
   text-align: center;
 }
 
+.userBanner img {
+  padding: 0%;
+  height: 65%;
+  width: auto;
+}
+
 .header h1 {
   margin-top: 0em;
+  margin-bottom: 0em;
   padding: none;
 }
 
@@ -93,24 +132,36 @@ input:checked + .slider:before {
   position: absolute;
   z-index: 1;
 }
-
-.userBanner img {
-  padding: 3%;
-}
-
 .userBanner img:hover + .tooltiptext {
   visibility: visible;
 }
 
 .header a {
   margin-top: 0em;
+  margin-bottom: 0em;
 }
 
 .filtering {
   display: flex;
-  gap: 13%;
+  gap: 10%;
   justify-content: center;
   align-items: center;
+  margin-top: 2%;
+}
+
+.dark .filtering select {
+  background-color: #9b9b9b;
+}
+
+@media only screen and (min-width: 600px) {
+  .filtering {
+    gap: 15%;
+  }
+}
+
+.dark input,
+.dark textarea {
+  background-color: #e6e6e6;
 }
 
 .sortingField {
@@ -126,8 +177,26 @@ input:checked + .slider:before {
   font-size: x-large;
 }
 
+.dark .sortingField button {
+  color: #e6e6e6;
+}
+
 .sortingField select {
   height: 100%;
+}
+
+.homePage p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.dark .homePage .reviewCard p,
+.dark .homePage .reviewCard h5 {
+  color: black;
+}
+
+.homePage .ratings p {
+  color: #4f4f4f;
 }
 
 .randomReview {
@@ -138,7 +207,7 @@ input:checked + .slider:before {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .reviewBody {
@@ -157,6 +226,10 @@ input:checked + .slider:before {
   margin: 2%;
 }
 
+.dark .reviewCard {
+  background-color: #4f4f4f;
+}
+
 .userBody {
   display: flex;
   flex-direction: row;
@@ -168,6 +241,7 @@ input:checked + .slider:before {
 .userContainer {
   padding: 2px 16px;
   margin: 2%;
+  font-weight: 500;
 }
 
 .userCard {
@@ -178,6 +252,10 @@ input:checked + .slider:before {
   width: 40%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 2%;
+  padding-top: 2%;
+}
+.dark .userCard {
+  background-color: #4f4f4f;
 }
 
 @media only screen and (min-width: 600px) {
@@ -185,11 +263,25 @@ input:checked + .slider:before {
     width: 30%;
   }
 }
+@media only screen and (min-width: 900px) {
+  .userCard {
+    width: 20%;
+  }
+}
 
 .userImageContainer {
-  display: flex;
+  display: inline-flex;
+  background-color: white;
+  border: 1px solid black;
+  align-items: center;
   justify-content: center;
-  height: 100px;
+  height: 80px;
+  width: 100px;
+}
+
+.userImageContainer img {
+  height: 70%;
+  width: auto;
 }
 
 @media only screen and (min-width: 600px) {
@@ -206,6 +298,9 @@ input:checked + .slider:before {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 2%;
 }
+.dark .singleReviewCard {
+  background-color: #4f4f4f;
+}
 
 .singleReviewTitle {
   text-align: center;
@@ -217,6 +312,9 @@ input:checked + .slider:before {
 
 .commentArea {
   margin-top: 2%;
+}
+.dark .commentArea p {
+  background-color: #292929;
 }
 
 .commentCard {
@@ -264,8 +362,21 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8%;
   height: 10px;
-  margin-bottom: 5%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  border-bottom: 1px solid black;
+}
+.dark .headerLinks {
+  background-color: #1f1f1f;
+}
+
+@media only screen and (min-width: 600px) {
+  .headerLinks {
+    padding-bottom: 2%;
+    padding-top: 2%;
+  }
 }
 
 .reviewImage {
@@ -348,6 +459,7 @@ input:checked + .slider:before {
   flex-flow: column;
   align-items: flex-end;
   margin-right: 10%;
+  padding-bottom: 10%;
 }
 .commentField {
   width: 90%;
@@ -360,6 +472,14 @@ input:checked + .slider:before {
 .commentForm .submit {
   background: none;
   cursor: pointer;
+  margin-top: 4%;
+}
+.dark .submit {
+  background-color: #e6e6e6;
+}
+
+.dark .newReview p {
+  background-color: #292929;
 }
 
 .titleField {
@@ -390,14 +510,6 @@ input:checked + .slider:before {
   padding: 1%;
 }
 
-.urlField {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.urlField input {
-  width: 98%;
+.dark .commentForm select {
+  background-color: #e6e6e6;
 }
