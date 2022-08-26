@@ -376,6 +376,20 @@ input:checked + .slider:before {
     margin-right: auto;
   }
 }
+
+@media only screen and (min-width: 900px) {
+  .singleReviewCard {
+    width: 60%;
+  }
+
+  .singleReviewCard img {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .headerLinks {
   display: flex;
   align-items: center;
@@ -486,7 +500,20 @@ input:checked + .slider:before {
   margin: 8px 0;
   box-sizing: border-box;
   text-align: left;
+  font-family: inherit;
+  padding: 1%;
 }
+
+@media only screen and (min-width: 900px) {
+  .commentForm {
+    margin-right: 20%;
+  }
+
+  .commentField {
+    width: 75%;
+  }
+}
+
 .commentForm .submit {
   background: none;
   cursor: pointer;
@@ -535,11 +562,6 @@ input:checked + .slider:before {
 
 .designerField input {
   width: 100%;
-}
-
-.commentField {
-  font-family: inherit;
-  padding: 1%;
 }
 
 .dark .commentForm select {
