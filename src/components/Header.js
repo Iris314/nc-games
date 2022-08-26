@@ -12,7 +12,7 @@ const Header = () => {
           <span className="tooltiptext">{CurrentUser.username}</span>
         </Link>
         <Link to="./">
-          <h1>NC - Games</h1>
+          <h1>House of Games</h1>
         </Link>
         <span className="headerLinks">
           <Link to="/reviews">All Reviews</Link>
