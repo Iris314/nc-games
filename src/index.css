@@ -347,6 +347,14 @@ input:checked + .slider:before {
   margin-bottom: 1%;
 }
 
+@media only screen and (min-width: 900px) {
+  .commentCard {
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+}
+
 .container {
   padding: 2px 16px;
   margin: 2%;
@@ -486,14 +494,16 @@ input:checked + .slider:before {
   color: red;
 }
 
-.commentForm {
+.commentForm,
+.reviewForm {
   display: flex;
   flex-flow: column;
   align-items: flex-end;
   margin-right: 10%;
   padding-bottom: 10%;
 }
-.commentField {
+.commentField,
+.reviewField {
   width: 90%;
   height: 10em;
   padding: 12px 20px;
@@ -502,6 +512,7 @@ input:checked + .slider:before {
   text-align: left;
   font-family: inherit;
   padding: 1%;
+  resize: none;
 }
 
 @media only screen and (min-width: 900px) {
@@ -514,13 +525,20 @@ input:checked + .slider:before {
   }
 }
 
-.commentForm .submit {
+.submit {
   background: none;
   cursor: pointer;
   margin-top: 4%;
 }
+
 .dark .submit {
   background-color: #e6e6e6;
+}
+
+@media only screen and (min-width: 600px) {
+  .submit {
+    margin-top: 2%;
+  }
 }
 
 .dark .newReview p {

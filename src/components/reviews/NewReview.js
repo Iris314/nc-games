@@ -63,7 +63,7 @@ const NewReview = () => {
   return (
     <div className="newReview">
       <p>Post a new Review</p>
-      <form className="commentForm" onSubmit={reviewPoster}>
+      <form className="reviewForm" onSubmit={reviewPoster}>
         <div className="reviewDetailField">
           <div className="titleField">
             <input type="text" name="title" placeholder="Title"></input>
@@ -74,7 +74,7 @@ const NewReview = () => {
         </div>
         <textarea
           type="text"
-          className="commentField"
+          className="reviewField"
           placeholder="Write your review here"></textarea>
         <select className="categoryLinks">
           <option value="select">category</option>
