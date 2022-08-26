@@ -64,11 +64,13 @@ const NewReview = () => {
     <div className="newReview">
       <p>Post a new Review</p>
       <form className="commentForm" onSubmit={reviewPoster}>
-        <div className="titleField">
-          <input type="text" name="title" placeholder="Title"></input>
-        </div>
-        <div className="designerField">
-          <input type="text" name="designer" placeholder="Designer"></input>
+        <div className="reviewDetailField">
+          <div className="titleField">
+            <input type="text" name="title" placeholder="Title"></input>
+          </div>
+          <div className="designerField">
+            <input type="text" name="designer" placeholder="Designer"></input>
+          </div>
         </div>
         <textarea
           type="text"

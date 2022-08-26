@@ -225,7 +225,25 @@ input:checked + .slider:before {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 2%;
 }
+@media only screen and (min-width: 600px) {
+  .homePage .reviewCard {
+    width: 50%;
+  }
+}
 
+@media only screen and (min-width: 900px) {
+  .homePage .reviewBody {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .homePage .reviewCard {
+    width: 40%;
+  }
+}
 .dark .reviewCard {
   background-color: #4f4f4f;
 }
@@ -482,8 +500,23 @@ input:checked + .slider:before {
   background-color: #292929;
 }
 
-.titleField {
+.reviewDetailField {
+  display: flex;
   width: 90%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .reviewDetailField {
+    flex-direction: row;
+    gap: 2%;
+    align-items: center;
+  }
+}
+
+.titleField {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -494,11 +527,10 @@ input:checked + .slider:before {
 }
 
 .designerField {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 2px;
 }
 
 .designerField input {
