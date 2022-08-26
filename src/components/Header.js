@@ -31,7 +31,6 @@ const Header = () => {
             <h1>House of Games</h1>
           </Link>
         </div>
-
         <span className="headerLinks">
           <Link to="/reviews">All Reviews</Link>
           <Link to="./reviews/new">New Review</Link>
