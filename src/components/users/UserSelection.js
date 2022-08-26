@@ -20,7 +20,7 @@ const UserSelection = () => {
       <div className="userBody">
         {users.map((user) => {
           return (
-            <div className="userCard" key={user.user_id}>
+            <div className="userCard" key={user.username}>
               <UserCard user={user} />
             </div>
           );

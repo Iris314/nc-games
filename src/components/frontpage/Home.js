@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const [topReview, setTopReview] = useState([]);
   const [recReview, setRecReview] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [reviewNo, setReviewNo] = useState();
 
   useEffect(() => {
-    fetchReviews("sort_by=comment_count").then(({ reviews }) => {
+    fetchReviews("sort_by=votes").then(({ reviews }) => {
       setTopReview(reviews[0]);
     });
     fetchReviews().then(({ reviews }) => {
@@ -20,19 +20,29 @@ const Home = () => {
       setReviewNo(() => {
         return revNoArr[Math.floor(Math.random() * revNoArr.length)];
       });
+      setIsLoading(false);
     });
-
-    setIsLoading(false);
   }, []);
 
   if (isLoading) return <p>Loading...</p>;
   return (
-    <div className="h">
+    <div className="homePage">
       <div className="reviewBody">
-        <div className="reviewCard">
+        <div
+          className="reviewCard"
+          style={{
+            backgroundImage: `url(${topReview.review_img_url})`,
+            backgroundSize: "cover",
+          }}>
           <TopReview review={topReview} />
         </div>
-        <div className="reviewCard">
+        <div
+          className="reviewCard"
+          style={{
+            backgroundImage: `url(${recReview.review_img_url})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}>
           <RecentReview review={recReview} />
         </div>
       </div>

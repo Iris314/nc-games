@@ -61,7 +61,7 @@ const NewReview = () => {
 
   if (isLoading) return <p>Loading...</p>;
   return (
-    <div>
+    <div className="newReview">
       <p>Post a new Review</p>
       <form className="commentForm" onSubmit={reviewPoster}>
         <div className="titleField">
@@ -74,9 +74,6 @@ const NewReview = () => {
           type="text"
           className="commentField"
           placeholder="Write your review here"></textarea>
-        <div className="urlField">
-          <input type="text" name="url" placeholder="Image URL"></input>
-        </div>
         <select className="categoryLinks">
           <option value="select">category</option>
           {categories.map((c) => {
