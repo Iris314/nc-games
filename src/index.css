@@ -523,6 +523,10 @@ input:checked + .slider:before {
   .commentField {
     width: 75%;
   }
+  .reviewForm {
+    width: 75%;
+    margin-left: 10%;
+  }
 }
 
 .submit {
