@@ -359,6 +359,13 @@ input:checked + .slider:before {
   }
 }
 
+.dark .commentCard {
+  background-color: #4f4f4f;
+}
+.dark .commentCard p {
+  background-color: #4f4f4f;
+}
+
 .container {
   padding: 2px 16px;
   margin: 2%;
