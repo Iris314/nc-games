@@ -2,13 +2,13 @@
 
 ## Background
 
-Northcoders Games is a social games content rating, and discussion website.
+House of Games is a social games content rating, and discussion website.
 
-Northcoders Games has game reviews which are divided into categories. Each review has user curated ratings and can be up or down voted using the API. Users add reviews and comments about a review. Users can also delete their own comments.
+House of Games has game reviews which are divided into categories. Each review has user curated ratings and can be up or down voted using the API. Users add reviews and comments about a review. Users can also delete their own comments.
 
 The hosted version can be found on [this](https://boardgames-nc.netlify.app) webpage.
 
-The api is located [here](https://boardgames-nc.herokuapp.com/api) with the github project available on [here](https://github.com/Iris314/nc-games-api/).
+The api is located [here](https://nervous-windbreaker-wasp.cyclic.app/api) and the corresponding github project available in [this](https://github.com/Iris314/nc-games-api/) repository.
 
 ## Instructions
 
