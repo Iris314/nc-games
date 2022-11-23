@@ -1,28 +1,30 @@
 export const fetchReviews = (params) => {
   return fetch(
-    `https://boardgames-nc.herokuapp.com/api/reviews?${params}`
+    `https://nervous-windbreaker-wasp.cyclic.app/api/reviews?${params}`
   ).then((res) => {
     return res.status !== 200 ? Promise.reject(res) : res.json();
   });
 };
 
 export const fetchUsers = () => {
-  return fetch(`https://boardgames-nc.herokuapp.com/api/users`).then((res) => {
-    return res.json();
-  });
-};
-
-export const fetchCategories = () => {
-  return fetch("https://boardgames-nc.herokuapp.com/api/categories").then(
+  return fetch(`https://nervous-windbreaker-wasp.cyclic.app/api/users`).then(
     (res) => {
       return res.json();
     }
   );
 };
 
+export const fetchCategories = () => {
+  return fetch(
+    "https://nervous-windbreaker-wasp.cyclic.app/api/categories"
+  ).then((res) => {
+    return res.json();
+  });
+};
+
 export const fetchReview = (review_id) => {
   return fetch(
-    `https://boardgames-nc.herokuapp.com/api/reviews/${review_id}`
+    `https://nervous-windbreaker-wasp.cyclic.app/api/reviews/${review_id}`
   ).then((res) => {
     return res.status === 404 ? Promise.reject(res) : res.json();
   });
@@ -30,7 +32,7 @@ export const fetchReview = (review_id) => {
 
 export const fetchComments = (review_id) => {
   return fetch(
-    `https://boardgames-nc.herokuapp.com/api/reviews/${review_id}/comments`
+    `https://nervous-windbreaker-wasp.cyclic.app/api/reviews/${review_id}/comments`
   ).then((res) => {
     return res.json();
   });
@@ -38,7 +40,7 @@ export const fetchComments = (review_id) => {
 
 export const patchCommentVotes = (comment_id, votes) => {
   return fetch(
-    `https://boardgames-nc.herokuapp.com/api/comments/${comment_id}`,
+    `https://nervous-windbreaker-wasp.cyclic.app/api/comments/${comment_id}`,
     {
       method: "PATCH",
       headers: {
@@ -52,20 +54,23 @@ export const patchCommentVotes = (comment_id, votes) => {
 };
 
 export const patchReviewVotes = (review_id, votes) => {
-  return fetch(`https://boardgames-nc.herokuapp.com/api/reviews/${review_id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ inc_votes: votes }),
-  }).then((res) => {
+  return fetch(
+    `https://nervous-windbreaker-wasp.cyclic.app/api/reviews/${review_id}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ inc_votes: votes }),
+    }
+  ).then((res) => {
     return res.json();
   });
 };
 
 export const postComment = ({ comment }, review_id) => {
   return fetch(
-    `https://boardgames-nc.herokuapp.com/api/reviews/${review_id}/comments`,
+    `https://nervous-windbreaker-wasp.cyclic.app/api/reviews/${review_id}/comments`,
     {
       method: "POST",
       headers: {
@@ -81,7 +86,7 @@ export const postComment = ({ comment }, review_id) => {
 };
 
 export const postReview = ({ review }) => {
-  return fetch(`https://boardgames-nc.herokuapp.com/api/reviews`, {
+  return fetch(`https://nervous-windbreaker-wasp.cyclic.app/api/reviews`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -100,7 +105,7 @@ export const postReview = ({ review }) => {
 
 export const deleteComment = (comment_id) => {
   return fetch(
-    `https://boardgames-nc.herokuapp.com/api/comments/${comment_id}`,
+    `https://nervous-windbreaker-wasp.cyclic.app/api/comments/${comment_id}`,
     {
       method: "DELETE",
     }
