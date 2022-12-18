@@ -1,4 +1,4 @@
-# Northcoders House of Games Frontend
+# House of Games Frontend
 
 ## Background
 
